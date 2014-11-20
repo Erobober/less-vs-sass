@@ -3,21 +3,28 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
+        less: {
+          development: {
+            files: {
+              "./styles/main.css": "./styles/main.less"
+            }
+          }
+        },
         sass: {
             dist: {
                 files: {
-                    'new-main.css': 'new-main.scss'
+                    './styles/new-main.css': './styles/new-main.scss'
                 }
             }
         },
         watch: {
             scripts: {
-                files: ['**/*.scss'],
+                files: ['./styles/**/*.scss'],
                 tasks: ['sass']
             }
         }
     });
 
-    grunt.registerTask('default', ['sass', 'watch']);
+    grunt.registerTask('default', ['sass', 'less', 'watch']);
 
 }
