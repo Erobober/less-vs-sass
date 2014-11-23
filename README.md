@@ -6,6 +6,8 @@ $ npm install
 $ grunt
 ```
 
+test
+
 # Examples
 
 Examples from this document may come from a variety of third-party sources:
