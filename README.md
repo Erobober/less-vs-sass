@@ -6,10 +6,16 @@ $ npm install
 $ grunt
 ```
 
+# Examples
+
+Examples from this document may come from a variety of third-party sources:
+
+- [Hugo Giraudel: LESS to Sass](http://hugogiraudel.com/2012/11/13/less-to-sass/)
+- [Aya Edamoto: Less vs Sass](http://www.slideshare.net/awelcom/less-vs-sass-38038783)
+
 # Syntax
 
 ## Variables
-Use of `@` vs `$`
 
 ```css
 // LESS
@@ -24,9 +30,9 @@ div {
 	color: $color;
 }
 ```
+> Use of `@` vs `$`
 
 ## Nesting
-Looks the same
 
 ```css
 // LESS
@@ -49,9 +55,9 @@ p {
 	}
 }
 ```
+> Look the same in both languages
 
 ## Mixins
-Preferential: Perhaps one could say they like LESS mixins because it's less writing (without the word `mixin` and `include`) and it looks more like CSS. Perhaps one could say they like the use of `mixin` and `include` because it helps them more easily see what is a mixin.
 
 ```css
 // LESS
@@ -72,6 +78,7 @@ Preferential: Perhaps one could say they like LESS mixins because it's less writ
 	@include bordered(4px);
 }
 ```
+> It's a matter of preference Perhaps one could say they like LESS mixins because it's less writing (without the word `mixin` and `include`) and it looks more like CSS. Perhaps one could say they like the use of `mixin` and `include` because it helps them more easily see what is a mixin.
 
 
 
@@ -81,7 +88,7 @@ The following situations can be solved using Sass or LESS but are easier conside
 
 ## Conditionals
 
-Sass has formal `if` and `if-else` statements. This can be particularly useful in mixins that have arguments. Suppose you wanted to make a mixin for CSS-only triangles (for speech bubbles or tool tips) as in this website: [cssarrowplease](http://cssarrowplease.com/). You might have a mixin that allows you to pass in the argument for which direction the arrow will go:
+Sass has formal `if` and `if-else` statements. This can be particularly useful in mixins that have arguments. Suppose you wanted to make a mixin for CSS-only triangles (for speech bubbles or tool tips) as [cssarrowplease](http://cssarrowplease.com/) demonstrates. In this case, you might have a mixin that allows you to pass in the argument for which direction the arrow will go:
 
 ```css
 .mixin(direction) {
@@ -113,4 +120,3 @@ The concept of a conditional can be accomplished with LESS in a less ideal way v
 }
 ```
 
-This example comes from [Hugo Giraudel in this article](http://hugogiraudel.com/2012/11/13/less-to-sass/) who describes LESS' way as counter-intuitive and frustrating to use.
