@@ -22,3 +22,19 @@
 .some-class {
 	#namespace1 > .mixin-one
 }
+
+
+/**
+ * @content with a nested media query mixin
+ */
+
+.respond(@min-width) {
+	@media screen and (min-width: @min-width) {
+		color: green;
+	}	
+}
+
+aside {
+	color: red;
+	.respond(300px);
+}

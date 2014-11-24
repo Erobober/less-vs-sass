@@ -140,8 +140,39 @@ Sass supports the `@content` variable in mixins which gets used as follows:
 }
 ```
 
-At times, a mixin can be complex and you might want to pass in properties (the width in this case) into a particular spot in the mixin. This is what @content allows for and LESS doesn't have a similar feature.
+While both LESS and Sass support passing in variable arguments into mixins, only Sass supports passing in full blocks of CSS properties/values. Then that full block can be used as `@content`
 
+Notice in this second example we are able to include the `respond` media query mixin and also pass in properties:
+
+```css
+@mixin respond($min-width) {
+	@media screen and (min-width: $min-width) {
+		@content;
+	}	
+}
+
+aside {
+	color: red;
+	@include respond(300px) {
+		color: green;
+	}
+}
+```
+
+We can't do this with LESS. In this case the mixin would have to know that we want `color: green` in the mixin. This makes out mixins much less flexible
+
+```css 
+.respond(@min-width) {
+	@media screen and (min-width: @min-width) {
+		color: green;
+	}	
+}
+
+aside {
+	color: red;
+	.respond(300px);
+}
+```
 
 ## Inheritance 
 

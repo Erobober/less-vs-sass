@@ -54,3 +54,20 @@ div.baz {
 		width: 100px;
 	}
 }
+
+/**
+ * @content with a nested media query mixin
+ */
+
+@mixin respond($min-width) {
+	@media screen and (min-width: $min-width) {
+		@content;
+	}	
+}
+
+aside {
+	color: red;
+	@include respond(300px) {
+		color: green;
+	}
+}

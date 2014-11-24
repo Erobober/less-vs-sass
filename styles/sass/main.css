@@ -20,3 +20,12 @@
   .comment > div:first-child {
     float: left;
     width: 100px; }
+
+/**
+ * @content with a nested media query mixin
+ */
+aside {
+  color: red; }
+  @media screen and (min-width: 300px) {
+    aside {
+      color: green; } }
