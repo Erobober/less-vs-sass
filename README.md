@@ -244,7 +244,9 @@ div {
 }
 ```
 
-This is great for namespacing - so we don't have a huge list of variables that collide with each other. but it's also nice to pass maps as arguments into mixins:
+This is great for namespacing so we don't have a huge list of variables that collide with each other.
+
+It's also nice to pass maps as arguments into mixins:
 
 ```css
 @mixin notice($normal, $error) {
