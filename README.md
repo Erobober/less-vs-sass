@@ -78,7 +78,7 @@ p {
 	@include bordered(4px);
 }
 ```
-> It's a matter of preference. Perhaps one could say they like LESS mixins because it's less writing (without the word `mixin` and `include`) and it looks more like CSS. Perhaps one could say they like the use of `mixin` and `include` because it helps them more easily see mixins from the other CSS.
+> The two syntaxes are a matter of preference. Perhaps one could say they like LESS mixins because it's less writing (without the word `mixin` and `include`) and it looks more like CSS. Perhaps one could say they like the use of `mixin` and `include` because it helps them more easily see mixins from the other CSS.
 
 # Easier in Sass
 
