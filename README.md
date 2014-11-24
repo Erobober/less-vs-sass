@@ -78,7 +78,7 @@ p {
 	@include bordered(4px);
 }
 ```
-> It's a matter of preference Perhaps one could say they like LESS mixins because it's less writing (without the word `mixin` and `include`) and it looks more like CSS. Perhaps one could say they like the use of `mixin` and `include` because it helps them more easily see what is a mixin.
+> It's a matter of preference. Perhaps one could say they like LESS mixins because it's less writing (without the word `mixin` and `include`) and it looks more like CSS. Perhaps one could say they like the use of `mixin` and `include` because it helps them more easily see mixins from the other CSS.
 
 # Easier in Sass
 
@@ -118,7 +118,7 @@ The concept of a conditional can be accomplished with LESS in a less intuitive w
 }
 ```
 
-This next example shows just how easy a Sass mixin looks with `if` statements. This mixin determines it's border radius based on the width of the column:
+This next example shows just how easy `if` statements can be in Sass. This mixin determines it's border radius based on the width of the column:
 
 ```css
 @mixin column($width) {
@@ -126,8 +126,6 @@ This next example shows just how easy a Sass mixin looks with `if` statements. T
 	border-radius: if($width > 100px, 15px, 10px);
 }
 ```
-
-
 
 # Sass only features
 
@@ -151,9 +149,9 @@ Sass supports the `@content` variable in mixins which gets used as follows:
 }
 ```
 
-While both LESS and Sass support passing in variable arguments into mixins, only Sass supports passing in full blocks of CSS properties/values. Then that full block can be used as `@content`
+While both LESS and Sass support passing in variable arguments into mixins, only Sass supports passing in full blocks of CSS properties/values. The block is turned into a variable called `@content`
 
-Notice in this second example we are able to include the `respond` media query mixin and also pass in properties:
+Notice in this second example we are able to include the `respond` mixin (for media queries) and also pass in CSS properties:
 
 ```css
 @mixin respond($min-width) {
@@ -170,7 +168,7 @@ aside {
 }
 ```
 
-We can't do this with LESS. In this case the mixin would have to know that we want `color: green` in the mixin. This makes out mixins much less flexible
+We can't do this with LESS. In this LESS example, the `color: green` is built into the mixin. This is much less flexible.
 
 ```css 
 .respond(@min-width) {
@@ -187,7 +185,7 @@ aside {
 
 ## Inheritance 
 
-Sass makes use of `@extend` for inheritance which has similar behavior to a `@mixin` but with a very different output. Imagine we have a clearfix solution which we are going to incorporate in many places:
+Sass makes use of `@extend` for inheritance which has similar behavior to a `@mixin` but with a very different output. Imagine we have a clearfix solution which we are going to incorporate in many places and we don't want to produce WET CSS:
 
 ```css
 .clearfix {
