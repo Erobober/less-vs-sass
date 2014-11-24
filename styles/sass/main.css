@@ -1,0 +1,16 @@
+/**
+ * ClearFix
+ */
+.clearfix:before, .content:before, .comment:before, .clearfix:after, .content:after, .comment:after {
+  content: " ";
+  display: table; }
+.clearfix:after, .content:after, .comment:after {
+  clear: both; }
+
+/**
+ * A very dry media object
+ */
+.media, div.foo, div.bar, div.baz {
+  overflow: hidden; }
+  .media > div:first-child, div.foo > div:first-child, div.bar > div:first-child, div.baz > div:first-child {
+    float: left; }

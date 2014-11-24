@@ -6,14 +6,14 @@ module.exports = function (grunt) {
         less: {
           development: {
             files: {
-              "./styles/main.css": "./styles/main.less"
+              "./styles/less/main.css": "./styles/less/main.less"
             }
           }
         },
         sass: {
             dist: {
                 files: {
-                    './styles/new-main.css': './styles/new-main.scss'
+                    './styles/sass/main.css': './styles/sass/main.scss'
                 }
             }
         },

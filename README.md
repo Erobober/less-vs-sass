@@ -6,16 +6,14 @@ $ npm install
 $ grunt
 ```
 
-test
-
 # Examples
 
 Examples from this document may come from a variety of third-party sources:
 
 - [Hugo Giraudel: LESS to Sass](http://hugogiraudel.com/2012/11/13/less-to-sass/)
-- [Aya Edamoto: Less vs Sass](http://www.slideshare.net/awelcom/less-vs-sass-38038783)
+- [Aya Edamoto: LESS vs Sass](http://www.slideshare.net/awelcom/less-vs-sass-38038783)
 
-# Syntax
+# Features of Both
 
 ## Variables
 
@@ -83,6 +81,9 @@ p {
 > It's a matter of preference Perhaps one could say they like LESS mixins because it's less writing (without the word `mixin` and `include`) and it looks more like CSS. Perhaps one could say they like the use of `mixin` and `include` because it helps them more easily see what is a mixin.
 
 
+# Easier in LESS
+
+
 
 # Easier in Sass
 
@@ -122,3 +123,26 @@ The concept of a conditional can be accomplished with LESS in a less ideal way v
 }
 ```
 
+# Features only Sass has
+
+## Inheritance 
+
+Sass makes use of `@extend` for inheritance which has similar behavior to a `@mixin` but with a very different output. Imagine we have a clearfix solution which we are going to incorporate in many places:
+
+
+```css
+.clearfix {
+	...
+}
+
+.content { @extend .clearfix; }
+.comment { @extend .clearfix; }
+```
+
+Produces:
+
+```css
+.clearfix, .content, .comment {
+	...
+}
+```
