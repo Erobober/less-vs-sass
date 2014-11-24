@@ -36,3 +36,21 @@ div.bar {
 div.baz {
 	@extend .media;
 }
+
+/**
+ * @content example
+ */
+
+@mixin media {
+	overflow: hidden;
+	> div:first-child {
+		float: left;
+		@content
+	}
+}
+
+.comment {
+	@include media {
+		width: 100px;
+	}
+}

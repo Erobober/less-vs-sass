@@ -11,3 +11,12 @@
   overflow: hidden; }
   .media > div:first-child, div.foo > div:first-child, div.bar > div:first-child, div.baz > div:first-child {
     float: left; }
+
+/**
+ * @content example
+ */
+.comment {
+  overflow: hidden; }
+  .comment > div:first-child {
+    float: left;
+    width: 100px; }

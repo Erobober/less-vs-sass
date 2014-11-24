@@ -120,6 +120,29 @@ The concept of a conditional can be accomplished with LESS in a less intuitive w
 
 # Sass only features
 
+## @content in mixins
+
+Sass supports the `@content` variable in mixins which gets used as follows:
+
+```css
+@mixin media {
+	overflow: hidden;
+	> div:first-child {
+		float: left;
+		@content
+	}
+}
+
+.comment {
+	@include media {
+		width: 100px;
+	}
+}
+```
+
+At times, a mixin can be complex and you might want to pass in properties (the width in this case) into a particular spot in the mixin. This is what @content allows for and LESS doesn't have a similar feature.
+
+
 ## Inheritance 
 
 Sass makes use of `@extend` for inheritance which has similar behavior to a `@mixin` but with a very different output. Imagine we have a clearfix solution which we are going to incorporate in many places:
