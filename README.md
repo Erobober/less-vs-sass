@@ -231,6 +231,45 @@ Note that if this were mixins (with LESS or Sass) we would have Dry LESS/Sass, b
 }
 ```
 
+## Maps
+
+Sass maps are very similar to arrays in programming. This can be useful to group variables together:
+
+```css
+$theme: (
+	primary: red,
+	secondary: blue
+)
+
+div {
+	background-color: map-get($theme, primary);
+}
+```
+
+This is great for namespacing - so we don't have a huge list of variables that collide with each other. but it's also nice to pass maps as arguments into mixins:
+
+```css
+@mixin notice($normal, $error) {
+	background-color: map-get($normal, 'background');
+	color: map-get($normal, 'font');
+
+	&.error {
+		background-color: map-get($error, 'background');
+		color: map-get($error, 'font');
+	}
+}
+
+div.notice {
+	@include notice(
+		(background: #eee, font: #aaa),
+		(background: salmon, font: red)
+	)
+}
+```
+
+
+
+
 
 # LESS only features
 
