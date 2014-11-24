@@ -1,6 +1,6 @@
 # LESS vs Sass
 
-Install and run
+To compile LESS or Sass:
 ```sh
 $ npm install
 $ grunt
