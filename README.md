@@ -204,7 +204,7 @@ The previous Sass will produce very DRY CSS as follows:
 }
 ```
 
-Note that if this were mixins (with LESS or Sass) we would have Dry LESS/Sass, but we would have had very WET CSS output:
+Note that if this were mixins with LESS we would author something that's DRY, but we would have had very WET CSS output:
 
 ```css
 // Less
