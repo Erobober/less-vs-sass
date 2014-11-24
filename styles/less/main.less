@@ -1,6 +1,24 @@
+/**
+ * Less without Sass' extend
+ */
 .clearfix {
 	overflow: hidden;
 }
 
 .content { .clearfix; }
 .comment { .clearfix; }
+
+
+/**
+ * Namespaces
+ */
+#namespace1 {
+	.mixin-one { color: red; }
+}
+#namespace2 {
+	.mixin-one { color: blue; }
+}
+
+.some-class {
+	#namespace1 > .mixin-one
+}

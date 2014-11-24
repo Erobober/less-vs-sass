@@ -80,11 +80,6 @@ p {
 ```
 > It's a matter of preference Perhaps one could say they like LESS mixins because it's less writing (without the word `mixin` and `include`) and it looks more like CSS. Perhaps one could say they like the use of `mixin` and `include` because it helps them more easily see what is a mixin.
 
-
-# Easier in LESS
-
-
-
 # Easier in Sass
 
 The following situations can be solved using Sass or LESS but are easier considering Sass' features
@@ -103,7 +98,7 @@ Sass has formal `if` and `if-else` statements. This can be particularly useful i
 }
 ```
 
-The concept of a conditional can be accomplished with LESS in a less ideal way via guarded mixins:
+The concept of a conditional can be accomplished with LESS in a less intuitive way via guarded mixins:
 
 ```css
 .mixin(direction) {
@@ -123,12 +118,11 @@ The concept of a conditional can be accomplished with LESS in a less ideal way v
 }
 ```
 
-# Features only Sass has
+# Sass only features
 
 ## Inheritance 
 
 Sass makes use of `@extend` for inheritance which has similar behavior to a `@mixin` but with a very different output. Imagine we have a clearfix solution which we are going to incorporate in many places:
-
 
 ```css
 .clearfix {
@@ -147,7 +141,7 @@ The previous Sass will produce very DRY CSS as follows:
 }
 ```
 
-Note that if this were mixins (with Less or Sass), we would have had modularity and Dry Less/Sass, but we would have had very WET CSS output:
+Note that if this were mixins (with LESS or Sass) we would have Dry LESS/Sass, but we would have had very WET CSS output:
 
 ```css
 // Less
@@ -169,5 +163,33 @@ Note that if this were mixins (with Less or Sass), we would have had modularity 
 }
 .comment {
   overflow: hidden;
+}
+```
+
+
+# LESS only features
+
+## Namespaces
+
+LESS has a concept called "Namespaces" which has a syntax as follows
+
+```css
+#namespace1 {
+	.mixin-one { color: red; }
+}
+#namespace2 {
+	.mixin-one { color: blue; }
+}
+
+.some-class {
+	#namespace1 > .mixin-one
+}
+```
+
+Which would produce
+
+```css
+.some-class {
+  color: red;
 }
 ```

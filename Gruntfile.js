@@ -19,8 +19,8 @@ module.exports = function (grunt) {
         },
         watch: {
             scripts: {
-                files: ['./styles/**/*.scss'],
-                tasks: ['sass']
+                files: ['./styles/**/*.scss', './styles/**/*.less'],
+                tasks: ['less', 'sass']
             }
         }
     });
