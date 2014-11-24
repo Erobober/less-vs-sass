@@ -118,6 +118,17 @@ The concept of a conditional can be accomplished with LESS in a less intuitive w
 }
 ```
 
+This next example shows just how easy a Sass mixin looks with `if` statements. This mixin determines it's border radius based on the width of the column:
+
+```css
+@mixin column($width) {
+	width: $width;
+	border-radius: if($width > 100px, 15px, 10px);
+}
+```
+
+
+
 # Sass only features
 
 ## @content in mixins
