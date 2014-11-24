@@ -267,15 +267,11 @@ div.notice {
 }
 ```
 
-
-
-
-
 # LESS only features
 
-## Namespaces
+## Namespaces for Mixins
 
-LESS has a concept called "Namespaces" which has a syntax as follows
+LESS has a concept called "Namespaces" which allows us to have two different mixins of the same name:
 
 ```css
 #namespace1 {
