@@ -132,17 +132,42 @@ Sass makes use of `@extend` for inheritance which has similar behavior to a `@mi
 
 ```css
 .clearfix {
-	...
+	overflow: hidden;
 }
 
 .content { @extend .clearfix; }
 .comment { @extend .clearfix; }
 ```
 
-Produces:
+The previous Sass will produce very DRY CSS as follows:
 
 ```css
 .clearfix, .content, .comment {
-	...
+	overflow: hidden;
+}
+```
+
+Note that if this were mixins (with Less or Sass), we would have had modularity and Dry Less/Sass, but we would have had very WET CSS output:
+
+```css
+// Less
+.clearfix {
+	overflow: hidden;
+}
+
+.content { .clearfix; }
+.comment { .clearfix; }
+```
+
+```css
+// Output
+.clearfix {
+  overflow: hidden;
+}
+.content {
+  overflow: hidden;
+}
+.comment {
+  overflow: hidden;
 }
 ```
