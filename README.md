@@ -89,31 +89,31 @@ The following situations can be solved using Sass or LESS but are easier conside
 Sass has formal `if` and `if-else` statements. This can be particularly useful in mixins that have arguments. Suppose you wanted to make a mixin for CSS-only triangles (for speech bubbles or tool tips) as [cssarrowplease](http://cssarrowplease.com/) demonstrates. In this case, you might have a mixin that allows you to pass in the argument for which direction the arrow will go:
 
 ```css
-.mixin(direction) {
+.mixin($direction) {
 	/* Basic stuff here */
-	if (direction = top)    { /* Conditional stuff here */ }
-	else if (direction = bottom) { /* Conditional stuff here */ }
-	else if (direction = left)   { /* Conditional stuff here */ }
-	else if (direction = right)  { /* Conditional stuff here */ }
+	if ($direction = top)    { /* Conditional stuff here */ }
+	else if ($direction = bottom) { /* Conditional stuff here */ }
+	else if ($direction = left)   { /* Conditional stuff here */ }
+	else if ($direction = right)  { /* Conditional stuff here */ }
 }
 ```
 
 The concept of a conditional can be accomplished with LESS in a less intuitive way via guarded mixins:
 
 ```css
-.mixin(direction) {
+.mixin(@direction) {
 	/*Basic stuff here */
 }
-.mixin(direction) when (direction = top) {
+.mixin(@direction) when (@direction = top) {
 	/* Conditional stuff here */
 }
-.mixin(direction) when (direction = bottom) {
+.mixin(@direction) when (@direction = bottom) {
 	/* Conditional stuff here */
 }
-.mixin(direction) when (direction = left) {
+.mixin(@direction) when (@direction = left) {
 	/* Conditional stuff here */
 }
-.mixin(direction) when (direction = right) {
+.mixin(@direction) when (@direction = right) {
 	/* Conditional stuff here */
 }
 ```
