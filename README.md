@@ -183,6 +183,8 @@ aside {
 }
 ```
 
+> Here is the request on Less' GitHub page to have this feature: [https://github.com/less/less.js/issues/965]
+
 ## Inheritance 
 
 Sass makes use of `@extend` for inheritance which has similar behavior to a `@mixin` but with a very different output. Imagine we have a clearfix solution which we are going to incorporate in many places and we don't want to produce WET CSS:
