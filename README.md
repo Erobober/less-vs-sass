@@ -113,13 +113,13 @@ LESS also makes use of interitance with it's version of `:extend()`. This exampl
 .comment { &:extend(.clearfix); }
 ```
 
-The previous Sass will produce very DRY CSS as follows:
+The previous LESS will produce very DRY CSS as follows:
 
 ```css
 .clearfix, .content, .comment {
 	overflow: hidden;
 }
-
+```
 
 # Easier in Sass
 
