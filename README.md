@@ -183,7 +183,7 @@ aside {
 }
 ```
 
-> Here is the request on Less' GitHub page to have this feature: [https://github.com/less/less.js/issues/965]
+> Here is the request on Less' GitHub page to have this feature: https://github.com/less/less.js/issues/965
 
 ## Inheritance 
 
