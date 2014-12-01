@@ -80,6 +80,47 @@ p {
 ```
 > The two syntaxes are a matter of preference. Perhaps one could say they like LESS mixins because it's less writing (without the word `mixin` and `include`) and it looks more like CSS. Perhaps one could say they like the use of `mixin` and `include` because it helps them more easily see mixins from the other CSS.
 
+
+## Inheritance 
+
+Sass makes use of `@extend` for inheritance which has similar behavior to a `@mixin` but with a very different output. Imagine we have a clearfix solution which we are going to incorporate in many places and we don't want to produce WET CSS:
+
+```css
+.clearfix {
+	overflow: hidden;
+}
+
+.content { @extend .clearfix; }
+.comment { @extend .clearfix; }
+```
+
+The previous Sass will produce very DRY CSS as follows:
+
+```css
+.clearfix, .content, .comment {
+	overflow: hidden;
+}
+```
+
+LESS also makes use of interitance with it's version of `:extend()`. This example shows how the above example would be done in LESS:
+
+```css
+.clearfix {
+	overflow: hidden;
+}
+
+.content { &:extend(.clearfix); }
+.comment { &:extend(.clearfix); }
+```
+
+The previous Sass will produce very DRY CSS as follows:
+
+```css
+.clearfix, .content, .comment {
+	overflow: hidden;
+}
+
+
 # Easier in Sass
 
 The following situations can be solved using Sass or LESS but are easier considering Sass' features
@@ -184,52 +225,6 @@ aside {
 ```
 
 > Here is the request on Less' GitHub page to have this feature: https://github.com/less/less.js/issues/965
-
-## Inheritance 
-
-Sass makes use of `@extend` for inheritance which has similar behavior to a `@mixin` but with a very different output. Imagine we have a clearfix solution which we are going to incorporate in many places and we don't want to produce WET CSS:
-
-```css
-.clearfix {
-	overflow: hidden;
-}
-
-.content { @extend .clearfix; }
-.comment { @extend .clearfix; }
-```
-
-The previous Sass will produce very DRY CSS as follows:
-
-```css
-.clearfix, .content, .comment {
-	overflow: hidden;
-}
-```
-
-Note that if this were mixins with LESS we would author something that's DRY, but we would have had very WET CSS output:
-
-```css
-// Less
-.clearfix {
-	overflow: hidden;
-}
-
-.content { .clearfix; }
-.comment { .clearfix; }
-```
-
-```css
-// Output
-.clearfix {
-  overflow: hidden;
-}
-.content {
-  overflow: hidden;
-}
-.comment {
-  overflow: hidden;
-}
-```
 
 ## Maps
 
