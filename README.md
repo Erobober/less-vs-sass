@@ -25,7 +25,7 @@ div {
 }
 
 // Sass
-#color: red;
+$color: red;
 div {
 	color: $color;
 }
